@@ -38,6 +38,7 @@
 		FC4A3A12185F9B790049096F /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A08185F9B790049096F /* AFXMLRequestOperation.m */; };
 		FC4A3A13185F9B790049096F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A0A185F9B790049096F /* UIImageView+AFNetworking.m */; };
 		FC4A3A16185F9BB20049096F /* GITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A15185F9BB20049096F /* GITableView.m */; };
+		FC4A3A19185F9CB10049096F /* SnsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A18185F9CB10049096F /* SnsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,8 @@
 		FC4A3A0A185F9B790049096F /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		FC4A3A14185F9BB20049096F /* GITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GITableView.h; sourceTree = "<group>"; };
 		FC4A3A15185F9BB20049096F /* GITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GITableView.m; sourceTree = "<group>"; };
+		FC4A3A17185F9CB10049096F /* SnsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnsViewController.h; sourceTree = "<group>"; };
+		FC4A3A18185F9CB10049096F /* SnsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				CE2618611828D383003CE272 /* Supporting Files */,
 				FC4A3A14185F9BB20049096F /* GITableView.h */,
 				FC4A3A15185F9BB20049096F /* GITableView.m */,
+				FC4A3A17185F9CB10049096F /* SnsViewController.h */,
+				FC4A3A18185F9CB10049096F /* SnsViewController.m */,
 			);
 			path = diet;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				CE7F938D1856F311005CA13E /* Junction.m in Sources */,
 				CE2618771828D383003CE272 /* ViewController.m in Sources */,
 				CE0465311856F6CF00B54FCF /* CalorieConsumption.m in Sources */,
+				FC4A3A19185F9CB10049096F /* SnsViewController.m in Sources */,
 				FC4A3A13185F9B790049096F /* UIImageView+AFNetworking.m in Sources */,
 				FC4A3A11185F9B790049096F /* AFURLConnectionOperation.m in Sources */,
 				FC4A3A12185F9B790049096F /* AFXMLRequestOperation.m in Sources */,
