@@ -52,7 +52,7 @@
 #define TOPURL @"http://localhost:3000"
 
 
-- (IBAction)postText:(id)sender {
+- (IBAction)postData:(id)sender {
     //名前が空だと登録させない
     if ([self.txtInputName.text isEqualToString:@""]) {
         return;
