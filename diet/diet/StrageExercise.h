@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface StrageExercise : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *exerciseTitle;
+@property (strong, nonatomic) IBOutlet UITextField *exerciseCal;
+@property (strong, nonatomic) IBOutlet UITextField *exerciseNum;
+
+- (IBAction)excerciseSave:(id)sender;
 
 @end

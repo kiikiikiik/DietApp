@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface StrageCalorie : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *calorieTitle;
+@property (strong, nonatomic) IBOutlet UITextField *calorieCal;
+@property (strong, nonatomic) IBOutlet UITextField *calorieNum;
+
+- (IBAction)calorieSave:(id)sender;
 
 @end
