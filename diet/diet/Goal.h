@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Goal : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *input_weight;
+@property (weak, nonatomic) IBOutlet UITextField *input_period;
+@property (weak, nonatomic) IBOutlet UIButton *enter;
+- (IBAction)push_enter:(id)sender;
+- (IBAction)hogehoge:(id)sender;
 
 @end

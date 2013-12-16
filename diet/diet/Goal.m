@@ -35,4 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)push_enter:(id)sender {
+    NSUserDefaults *weight = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *period = [NSUserDefaults standardUserDefaults];
+    [weight setObject:self.input_weight.text forKey:@"my_weight"];
+    [period setObject:self.input_period.text forKey:@"my_period"];
+    int w = [weight integerForKey:@"my_weight"];
+    int p = [period integerForKey:@"my_period"];
+    NSLog(@"体重は%d",w);
+    NSLog(@"期間は%d",p);
+}
+
+- (IBAction)hogehoge:(id)sender {
+}
 @end
