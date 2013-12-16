@@ -12,8 +12,6 @@
 @interface SnsViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *txtInputName;
-
-
 @property (strong, nonatomic) IBOutlet GITableView *tableViewTextList;
 
 
