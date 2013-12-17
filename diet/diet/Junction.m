@@ -56,6 +56,18 @@ sqlite3* db;
         [db close];
     }
 
+    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    {
+        //なければ新規作成
+        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight_hoge.db"]];
+        
+        NSString *sql = @"CREATE TABLE weight (id INTEGER PRIMARY KEY AUTOINCREMENT,weight TEXT,date TEXT);";
+        
+        [db open]; //DB開く
+        [db executeUpdate:sql]; //SQL実行
+        [db close];
+    }
+
     
 }
 

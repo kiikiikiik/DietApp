@@ -50,6 +50,7 @@ sqlite3* db;
     
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSLog(@"%@",paths);
     NSString *dir   = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
