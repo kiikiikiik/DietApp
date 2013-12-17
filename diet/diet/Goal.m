@@ -46,6 +46,9 @@
     NSLog(@"期間は%d",p);
 }
 
+- (IBAction)end_input_weight:(id)sender {
+}
+
 - (IBAction)hogehoge:(id)sender {
 }
 @end

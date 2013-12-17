@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Goal-->
@@ -18,7 +18,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="hogehoge:" destination="2" eventType="editingDidEnd" id="Mcw-6s-0m3"/>
+                                    <action selector="end_input_weight:" destination="2" eventType="editingDidEndOnExit" id="kSv-Gx-UZ6"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="目標体重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fBP-V5-TUx">
@@ -94,9 +94,6 @@
                                 <state key="normal" title="体重入力">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="pv5-Uh-jmV" kind="modal" id="PD3-gS-aae"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q4k-OG-7km">
                                 <rect key="frame" x="147" y="142" width="90" height="85"/>
@@ -186,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="477" y="31"/>
         </scene>
-        <!--Strage Calorie-->
+        <!--Intake Enter-->
         <scene sceneID="lu2-Ow-PTy">
             <objects>
                 <viewController id="m8A-jp-4Bu" customClass="IntakeEnter" sceneMemberID="viewController">
@@ -276,10 +273,6 @@
         <scene sceneID="UEL-iG-sFu">
             <objects>
                 <viewController id="mPx-dg-5JA" customClass="SnsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h4z-C7-nnC"/>
-                        <viewControllerLayoutGuide type="bottom" id="qhW-NX-bTy"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rsr-Z6-vlK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -358,9 +351,6 @@
                                 <state key="normal" title="PUSH">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="jRN-Zu-vhb" kind="modal" id="Fub-pU-WPT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3D2-ZT-JYd">
                                 <rect key="frame" x="119" y="369" width="82" height="50"/>
@@ -380,7 +370,7 @@
             </objects>
             <point key="canvasLocation" x="477" y="747"/>
         </scene>
-        <!--Strage Exercise-->
+        <!--Consumption Enter-->
         <scene sceneID="Icm-dE-9Wd">
             <objects>
                 <viewController id="7sW-Rb-mge" customClass="ConsumptionEnter" sceneMemberID="viewController">
@@ -446,24 +436,16 @@
                                 <state key="normal" title="save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="excerciseSave:" destination="jRN-Zu-vhb" eventType="touchUpInside" id="UXz-nM-xp9"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="exerciseCal" destination="3aH-KF-OMh" id="wSe-Fz-kVg"/>
-                        <outlet property="exerciseNum" destination="BGE-gb-Pqa" id="Vht-uD-fac"/>
-                        <outlet property="exerciseTitle" destination="0bP-Ff-jAF" id="Q3P-9c-8Jb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="od6-TH-UeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1315" y="419"/>
         </scene>
-        <!--Strage Weight-->
+        <!--Today Weight-->
         <scene sceneID="w3e-kC-Xgp">
             <objects>
                 <viewController id="9FG-wb-jMa" customClass="TodayWeight" sceneMemberID="viewController">
@@ -492,9 +474,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="weightNum" destination="gAu-5A-rr9" id="WpE-1m-bQA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLr-J9-yvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,7 +487,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="cLo-Up-sYt"/>
-        <segue reference="zah-71-Ibl"/>
         <segue reference="Krc-nh-oZK"/>
     </inferredMetricsTieBreakers>
 </document>
