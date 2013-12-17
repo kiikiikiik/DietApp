@@ -18,6 +18,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="end_input_weight:" destination="2" eventType="editingDidEndOnExit" id="PbT-P0-WSy"/>
+                                    <action selector="hogehoge:" destination="2" eventType="editingDidEnd" id="Mcw-6s-0m3"/>
                                     <action selector="end_input_weight:" destination="2" eventType="editingDidEndOnExit" id="kSv-Gx-UZ6"/>
                                 </connections>
                             </textField>

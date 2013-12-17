@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *input_period;
 @property (weak, nonatomic) IBOutlet UIButton *enter;
 - (IBAction)push_enter:(id)sender;
+- (IBAction)end_input_weight:(id)sender;
+- (IBAction)end_input_height:(id)sender;
 
 
 
