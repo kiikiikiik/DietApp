@@ -10,4 +10,8 @@
 
 @interface TodayWeight : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *weight;
+
+- (IBAction)weightSave:(id)sender;
+
 @end
