@@ -18,8 +18,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="end_input_weight:" destination="2" eventType="editingDidEndOnExit" id="PbT-P0-WSy"/>
-                                    <action selector="hogehoge:" destination="2" eventType="editingDidEnd" id="Mcw-6s-0m3"/>
                                     <action selector="end_input_weight:" destination="2" eventType="editingDidEndOnExit" id="kSv-Gx-UZ6"/>
                                 </connections>
                             </textField>
@@ -40,7 +38,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="end_input_height:" destination="2" eventType="editingDidEndOnExit" id="qVA-Yb-khf"/>
+                                    <action selector="end_input_period:" destination="2" eventType="editingDidEndOnExit" id="ejm-gr-i6z"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="目標期間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f5t-c6-SzZ">

@@ -49,6 +49,9 @@
 - (IBAction)end_input_weight:(id)sender {
 }
 
+- (IBAction)end_input_period:(id)sender {
+}
+
 - (IBAction)hogehoge:(id)sender {
 }
 @end
