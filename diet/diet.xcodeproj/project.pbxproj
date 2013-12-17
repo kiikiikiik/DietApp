@@ -45,6 +45,9 @@
 		FC4A3A3E185FB3AA0049096F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A37185FB3AA0049096F /* FMDatabasePool.m */; };
 		FC4A3A3F185FB3AA0049096F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A39185FB3AA0049096F /* FMDatabaseQueue.m */; };
 		FC4A3A40185FB3AA0049096F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A3B185FB3AA0049096F /* FMResultSet.m */; };
+		FC4A3A43185FB4D30049096F /* StrageCalorie.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A42185FB4D30049096F /* StrageCalorie.m */; };
+		FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A45185FB4E10049096F /* StrageExercise.m */; };
+		FC4A3A49185FC5240049096F /* StrageWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A48185FC5240049096F /* StrageWeight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +119,12 @@
 		FC4A3A39185FB3AA0049096F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		FC4A3A3A185FB3AA0049096F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		FC4A3A3B185FB3AA0049096F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FC4A3A41185FB4D30049096F /* StrageCalorie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrageCalorie.h; sourceTree = "<group>"; };
+		FC4A3A42185FB4D30049096F /* StrageCalorie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageCalorie.m; sourceTree = "<group>"; };
+		FC4A3A44185FB4E10049096F /* StrageExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrageExercise.h; sourceTree = "<group>"; };
+		FC4A3A45185FB4E10049096F /* StrageExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageExercise.m; sourceTree = "<group>"; };
+		FC4A3A47185FC5240049096F /* StrageWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrageWeight.h; sourceTree = "<group>"; };
+		FC4A3A48185FC5240049096F /* StrageWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageWeight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +206,12 @@
 				FC4A3A15185F9BB20049096F /* GITableView.m */,
 				FC4A3A17185F9CB10049096F /* SnsViewController.h */,
 				FC4A3A18185F9CB10049096F /* SnsViewController.m */,
+				FC4A3A41185FB4D30049096F /* StrageCalorie.h */,
+				FC4A3A42185FB4D30049096F /* StrageCalorie.m */,
+				FC4A3A44185FB4E10049096F /* StrageExercise.h */,
+				FC4A3A45185FB4E10049096F /* StrageExercise.m */,
+				FC4A3A47185FC5240049096F /* StrageWeight.h */,
+				FC4A3A48185FC5240049096F /* StrageWeight.m */,
 			);
 			path = diet;
 			sourceTree = "<group>";
@@ -330,6 +345,7 @@
 				CE0465341856F71700B54FCF /* IntakeEnter.m in Sources */,
 				FC4A3A16185F9BB20049096F /* GITableView.m in Sources */,
 				CE7F93871856F1AF005CA13E /* Goal.m in Sources */,
+				FC4A3A43185FB4D30049096F /* StrageCalorie.m in Sources */,
 				CE2618671828D383003CE272 /* main.m in Sources */,
 				FC4A3A40185FB3AA0049096F /* FMResultSet.m in Sources */,
 				CE26186B1828D383003CE272 /* AppDelegate.m in Sources */,
@@ -337,6 +353,7 @@
 				CE2618771828D383003CE272 /* ViewController.m in Sources */,
 				FC4A3A3C185FB3AA0049096F /* FMDatabase.m in Sources */,
 				FC4A3A3F185FB3AA0049096F /* FMDatabaseQueue.m in Sources */,
+				FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */,
 				FC4A3A3D185FB3AA0049096F /* FMDatabaseAdditions.m in Sources */,
 				CE0465311856F6CF00B54FCF /* CalorieConsumption.m in Sources */,
 				FC4A3A19185F9CB10049096F /* SnsViewController.m in Sources */,
@@ -344,6 +361,7 @@
 				FC4A3A13185F9B790049096F /* UIImageView+AFNetworking.m in Sources */,
 				FC4A3A11185F9B790049096F /* AFURLConnectionOperation.m in Sources */,
 				FC4A3A12185F9B790049096F /* AFXMLRequestOperation.m in Sources */,
+				FC4A3A49185FC5240049096F /* StrageWeight.m in Sources */,
 				FC4A3A0D185F9B790049096F /* AFImageRequestOperation.m in Sources */,
 				FC4A3A10185F9B790049096F /* AFPropertyListRequestOperation.m in Sources */,
 				FC4A3A0E185F9B790049096F /* AFJSONRequestOperation.m in Sources */,
