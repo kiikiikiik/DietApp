@@ -34,7 +34,7 @@ sqlite3* db;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    calorieTitle.delegate = self;
+//    calorieTitle.delegate = self;
 }
 
 

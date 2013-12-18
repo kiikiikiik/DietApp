@@ -43,7 +43,7 @@
     self.tableViewTextList.delegate = self.tableViewTextList;
     
     //UITextFieldの初期設定
-    self.txtInputName.delegate = self;
+//    self.txtInputName.delegate = self;
     [self.txtInputName becomeFirstResponder];
     self.txtInputName.placeholder = @"登録したい名前を入力してね";
     
