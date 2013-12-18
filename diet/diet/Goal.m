@@ -35,6 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+<<<<<<< HEAD
 - (IBAction)push_enter:(id)sender {
     NSUserDefaults *weight = [NSUserDefaults standardUserDefaults];
     NSUserDefaults *period = [NSUserDefaults standardUserDefaults];
@@ -46,12 +48,28 @@
     NSLog(@"期間は%d",p);
 }
 
+=======
+>>>>>>> origin/Presentation2
+ */
 - (IBAction)end_input_weight:(id)sender {
 }
 
 - (IBAction)end_input_period:(id)sender {
 }
-
+/*
+<<<<<<< HEAD
 - (IBAction)hogehoge:(id)sender {
+=======
+ */
+- (IBAction)enter:(id)sender {
+        NSUserDefaults *weight = [NSUserDefaults standardUserDefaults];
+        NSUserDefaults *period = [NSUserDefaults standardUserDefaults];
+        [weight setObject:self.input_weight.text forKey:@"my_weight"];
+        [period setObject:self.input_period.text forKey:@"my_period"];
+        int w = [weight integerForKey:@"my_weight"];
+        int p = [period integerForKey:@"my_period"];
+        NSLog(@"体重は%d",w);
+        NSLog(@"期間は%d",p);
+//>>>>>>> origin/Presentation2
 }
 @end
