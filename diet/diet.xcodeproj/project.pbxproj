@@ -25,6 +25,7 @@
 		CE7F93871856F1AF005CA13E /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F93861856F1AF005CA13E /* Goal.m */; };
 		CE7F938D1856F311005CA13E /* Junction.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F938C1856F311005CA13E /* Junction.m */; };
 		CE7F93961856F44E005CA13E /* TodayWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F93951856F44E005CA13E /* TodayWeight.m */; };
+		FC10F94E1867313100AC9298 /* CalorieSeek.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10F94D1867313100AC9298 /* CalorieSeek.m */; };
 		FC4A39F2185F9B370049096F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4A39F1185F9B370049096F /* SystemConfiguration.framework */; };
 		FC4A39F4185F9B400049096F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4A39F3185F9B400049096F /* Security.framework */; };
 		FC4A39F6185F9B480049096F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4A39F5185F9B480049096F /* MobileCoreServices.framework */; };
@@ -81,6 +82,8 @@
 		CE7F938C1856F311005CA13E /* Junction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Junction.m; sourceTree = "<group>"; };
 		CE7F93941856F44E005CA13E /* TodayWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayWeight.h; sourceTree = "<group>"; };
 		CE7F93951856F44E005CA13E /* TodayWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayWeight.m; sourceTree = "<group>"; };
+		FC10F94C1867313100AC9298 /* CalorieSeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalorieSeek.h; sourceTree = "<group>"; };
+		FC10F94D1867313100AC9298 /* CalorieSeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalorieSeek.m; sourceTree = "<group>"; };
 		FC4A39F1185F9B370049096F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FC4A39F3185F9B400049096F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FC4A39F5185F9B480049096F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -201,7 +204,6 @@
 				CE0465331856F71700B54FCF /* IntakeEnter.m */,
 				CE0465351856F73E00B54FCF /* ConsumptionEnter.h */,
 				CE0465361856F73E00B54FCF /* ConsumptionEnter.m */,
-				CE2618611828D383003CE272 /* Supporting Files */,
 				FC4A3A14185F9BB20049096F /* GITableView.h */,
 				FC4A3A15185F9BB20049096F /* GITableView.m */,
 				FC4A3A17185F9CB10049096F /* SnsViewController.h */,
@@ -212,6 +214,9 @@
 				FC4A3A45185FB4E10049096F /* StrageExercise.m */,
 				FC4A3A47185FC5240049096F /* StrageWeight.h */,
 				FC4A3A48185FC5240049096F /* StrageWeight.m */,
+				FC10F94C1867313100AC9298 /* CalorieSeek.h */,
+				FC10F94D1867313100AC9298 /* CalorieSeek.m */,
+				CE2618611828D383003CE272 /* Supporting Files */,
 			);
 			path = diet;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				FC4A3A0E185F9B790049096F /* AFJSONRequestOperation.m in Sources */,
 				CE04652E1856F67600B54FCF /* CalorieIntake.m in Sources */,
 				FC4A3A0B185F9B790049096F /* AFHTTPClient.m in Sources */,
+				FC10F94E1867313100AC9298 /* CalorieSeek.m in Sources */,
 				CE7F93961856F44E005CA13E /* TodayWeight.m in Sources */,
 				FC4A3A0F185F9B790049096F /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);
