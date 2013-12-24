@@ -40,11 +40,32 @@ NSURL *dbPath;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self initialize];
+}
+
+- (void)initialize
+{
+    self.seekResult.dataSource = self.seekResult;
+    self.seekResult.delegate = self.seekResult;
+    
+    [self.seekField becomeFirstResponder];
+    self.seekField.placeholder = @"検索したいタイトルを入力";
+
 }
 
 
-
 - (IBAction)seekButton:(id)sender {
+    
+    if ([self.seekField.text isEqualToString:@""]) {
+        return;
+    }
+    
+    // seekFieldに入力した文字列
+    NSString *title = self.seekField.text;
+    NSString *a = @"%";
+    NSString *str = [NSString stringWithFormat:@"%@%@%@",a,title,a];
+    NSLog(@"%@",str);
+    
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     
@@ -57,26 +78,31 @@ NSURL *dbPath;
         FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
         
         [db open]; //DB開く
-        
-        FMResultSet *result = [db executeQuery:@"select id,calorie_title from calorie_data"];
+
+        // DB内検索
+        FMResultSet *result = [db executeQuery:@"select * from calorie_data where calorie_title like ?",str];
 
 
         NSMutableArray *data= [[NSMutableArray alloc] init];
 
 
+        // DB内の値取得
         while ([result next]) {
-            int result_id = [result intForColumn:@"id"];
-            NSString *result_title = [result stringForColumn:@"calorie_title"];
-            [data addObject:result_title];
-            NSLog(@"recode id[%d], title[%@]",result_id, result_title);
+//            int result_id = [result intForColumn:@"id"];
+            NSString *cal_title = [result stringForColumn:@"calorie_title"];
+            int cal_cal = [result intForColumn:@"calorie_cal"];
+            int cal_num = [result intForColumn:@"calorie_num"];
+            
+            NSString *result = [NSString stringWithFormat:@"title = %@ cal = %d num = %d",cal_title,cal_cal,cal_num];
+            [data addObject:result];
         }
         
         NSLog(@"%@", data);
-
         NSLog(@"count = %d",[data count]);
-
         
-        // 値は取得できたから、あとは、テーブルへの格納！
+        // テーブルへの格納
+        self.seekResult.nameList = data;
+        [self.seekResult reloadData];
 
 
         

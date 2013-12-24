@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GITableView.h"
 
 @interface CalorieSeek : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *seekField;
-@property (strong, nonatomic) IBOutlet UITableView *seekResult;
+@property (strong, nonatomic) IBOutlet GITableView *seekResult;
 - (IBAction)seekButton:(id)sender;
 
 @end
