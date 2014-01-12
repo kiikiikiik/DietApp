@@ -585,7 +585,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="MIV-70-1Ze"/>
-        <segue reference="vko-ij-MKv"/>
         <segue reference="zah-71-Ibl"/>
+        <segue reference="vko-ij-MKv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -50,7 +50,6 @@ NSURL *dbPath;
     
     [self.seekField becomeFirstResponder];
     self.seekField.placeholder = @"検索したいタイトルを入力";
-
 }
 
 
@@ -59,17 +58,20 @@ NSURL *dbPath;
     if ([self.seekField.text isEqualToString:@""]) {
         return;
     }
-    
+
+
+    // db内を曖昧検索するための形をここで作っている。
     // seekFieldに入力した文字列
     NSString *title = self.seekField.text;
     NSString *a = @"%";
     NSString *str = [NSString stringWithFormat:@"%@%@%@",a,title,a];
     NSLog(@"%@",str);
     
-    
+
+    // db先のパス
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    
     NSLog(@"%@",paths);
+
     NSString *dir = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -77,9 +79,9 @@ NSURL *dbPath;
     {
         FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
         
-        [db open]; //DB開く
+        [db open];
 
-        // DB内検索
+        // DB内検索(ここでstrを使用している)
         FMResultSet *result = [db executeQuery:@"select * from calorie_data where calorie_title like ?",str];
 
 
@@ -88,7 +90,7 @@ NSURL *dbPath;
 
         // DB内の値取得
         while ([result next]) {
-//            int result_id = [result intForColumn:@"id"];
+            // int result_id = [result intForColumn:@"id"];
             NSString *cal_title = [result stringForColumn:@"calorie_title"];
             int cal_cal = [result intForColumn:@"calorie_cal"];
             int cal_num = [result intForColumn:@"calorie_num"];
@@ -103,14 +105,30 @@ NSURL *dbPath;
         // テーブルへの格納
         self.seekResult.nameList = data;
         [self.seekResult reloadData];
-
-
         
-
         
         NSLog(@"Error %@ - %d", [db lastErrorMessage], [db lastErrorCode]);
         [db close];
     }
     
 }
+
+
+
+/* 呼び出される側のメソッド */
+- (void)likeButtonPressed:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
+    int row = [self.seekResult indexPathForCell:cell].row;
+    UIAlertView *ar = [[UIAlertView alloc] initWithTitle:@"Like?"
+                                                 message:[NSString stringWithFormat:@"%d行目のボタンが押されました", row]
+                                                delegate:self
+                                       cancelButtonTitle:@"YES"
+                                       otherButtonTitles:@"NO",nil];
+    [ar show];
+}
+
+
+
+
 @end
