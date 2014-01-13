@@ -51,6 +51,7 @@
 		FCD9704F188455A600D2B823 /* GetTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD9704E188455A600D2B823 /* GetTimeline.m */; };
 		FCD9705118845D7B00D2B823 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705018845D7B00D2B823 /* Accounts.framework */; };
 		FCD9705318845D8300D2B823 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705218845D8300D2B823 /* Social.framework */; };
+		FCD970561884633900D2B823 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD970551884633900D2B823 /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,8 @@
 		FCD9704E188455A600D2B823 /* GetTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTimeline.m; sourceTree = "<group>"; };
 		FCD9705018845D7B00D2B823 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		FCD9705218845D8300D2B823 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FCD970541884633900D2B823 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		FCD970551884633900D2B823 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				CE2618721828D383003CE272 /* MainStoryboard.storyboard */,
 				FCD9704D188455A600D2B823 /* GetTimeline.h */,
 				FCD9704E188455A600D2B823 /* GetTimeline.m */,
+				FCD970541884633900D2B823 /* FirstViewController.h */,
+				FCD970551884633900D2B823 /* FirstViewController.m */,
 				CE2618751828D383003CE272 /* ViewController.h */,
 				CE2618761828D383003CE272 /* ViewController.m */,
 				CE7F93851856F1AF005CA13E /* Goal.h */,
@@ -367,6 +372,7 @@
 				FC4A3A3C185FB3AA0049096F /* FMDatabase.m in Sources */,
 				FC4A3A3F185FB3AA0049096F /* FMDatabaseQueue.m in Sources */,
 				FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */,
+				FCD970561884633900D2B823 /* FirstViewController.m in Sources */,
 				FC4A3A3D185FB3AA0049096F /* FMDatabaseAdditions.m in Sources */,
 				CE0465311856F6CF00B54FCF /* CalorieConsumption.m in Sources */,
 				FC4A3A19185F9CB10049096F /* SnsViewController.m in Sources */,
