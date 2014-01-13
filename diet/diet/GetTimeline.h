@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
-@interface GetTimeline : UIViewController
+@interface GetTimeline : UIViewController<UITableViewDelegate, UITableViewDataSource>{
+    UITableView *_table;
+}
+
+
+- (IBAction)refreshTimeline:(id)sender;
+- (IBAction)sendEasyTweet:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UITableView *table;
 
 @end
