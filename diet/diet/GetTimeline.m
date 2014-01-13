@@ -7,7 +7,7 @@
 //
 
 #import "GetTimeline.h"
-#import "FirstViewController.h"
+
 
 @interface GetTimeline ()
 
@@ -15,10 +15,9 @@
 
 @implementation GetTimeline{
     NSArray *tweets;
-//    IBOutlet UITableView *table;
+    IBOutlet UITableView *table;
 }
 
-@synthesize table = _table;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -172,7 +171,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     //最新の内容にテーブルをセット
-    [_table reloadData];
+    [table reloadData];
 }
 
 
