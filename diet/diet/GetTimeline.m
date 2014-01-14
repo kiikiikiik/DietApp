@@ -18,6 +18,7 @@
     IBOutlet UITableView *table;
 }
 
+@synthesize table = _table;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,12 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self getTimeline];
 }
 
 
 - (void)getTimeline {
     
+
     //Twitter APIのURLを準備
     //今回は「statuses/home_timeline.json」を利用
     NSString *apiURL = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
@@ -46,6 +49,7 @@
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType =
     [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
     
     //ユーザーにTwitterの認証情報を使うことを確認
     [store requestAccessToAccountsWithType:twitterAccountType
@@ -105,6 +109,7 @@
                                         }
                                     }
                                 }];
+
 }
 
 
@@ -131,9 +136,11 @@
 
 //Table Viewのセルの数を指定
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"hogeho%d",tweets.count);
     return [tweets count];
 }
 
+// 呼ばれてない疑惑
 //各セルにタイトルをセット
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -142,12 +149,14 @@
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //カスタムセル上のラベル
-    UILabel *tweetLabel = (UILabel*)[cell viewWithTag:1];
-    UILabel *userLabel = (UILabel*)[cell viewWithTag:2];
+    UIView *contentView = [cell viewWithTag:100];
+    UILabel *tweetLabel = (UILabel *)[contentView viewWithTag:1];
+    UILabel *userLabel = (UILabel *)[contentView viewWithTag:2];
     
     //セルに表示するtweetのJSONを解析し、NSDictionaryに
+   // NSLog([tweets description]);
     NSDictionary *tweetMessage = [tweets objectAtIndex:[indexPath row]];
-    
+
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
     
@@ -158,36 +167,41 @@
     return cell;
 }
 
+
 - (void) refreshTableOnFront {
-    
+
     [self performSelectorOnMainThread:@selector(refreshTable) withObject:self waitUntilDone:TRUE];
-    
 }
 
 
 //テーブルの内容をセット
 - (void)refreshTable {
+
     //ステータスバーのActivity Indicatorを停止
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     //最新の内容にテーブルをセット
-    [table reloadData];
+    [_table reloadData];
 }
 
 
+// 呼ばれてない疑惑
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //セルにされているtweetのJSONを解析し、NSDictionaryに
     NSDictionary *tweetMessage = [tweets objectAtIndex:[indexPath row]];
+    NSLog(@"begin");
     
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
-    
+    NSLog(@"hogehoge");
+
     //メッセージを表示
     UIAlertView *alert = [[UIAlertView alloc] init];
     alert.title = [userInfo objectForKey:@"screen_name"];
     alert.message = [tweetMessage objectForKey:@"text"];
     alert.delegate = self;
+
     [alert addButtonWithTitle:@"OK"];
     [alert show];
 }
@@ -247,6 +261,8 @@
     
 }
 
+- (void)sayHomo {
+}
 
 
 @end
