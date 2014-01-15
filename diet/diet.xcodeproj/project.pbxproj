@@ -52,6 +52,9 @@
 		FC4A3A43185FB4D30049096F /* StrageCalorie.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A42185FB4D30049096F /* StrageCalorie.m */; };
 		FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A45185FB4E10049096F /* StrageExercise.m */; };
 		FC4A3A49185FC5240049096F /* StrageWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A48185FC5240049096F /* StrageWeight.m */; };
+		FCD9704F188455A600D2B823 /* GetTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD9704E188455A600D2B823 /* GetTimeline.m */; };
+		FCD9705118845D7B00D2B823 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705018845D7B00D2B823 /* Accounts.framework */; };
+		FCD9705318845D8300D2B823 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705218845D8300D2B823 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +216,10 @@
 		FC4A3A45185FB4E10049096F /* StrageExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageExercise.m; sourceTree = "<group>"; };
 		FC4A3A47185FC5240049096F /* StrageWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrageWeight.h; sourceTree = "<group>"; };
 		FC4A3A48185FC5240049096F /* StrageWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageWeight.m; sourceTree = "<group>"; };
+		FCD9704D188455A600D2B823 /* GetTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetTimeline.h; sourceTree = "<group>"; };
+		FCD9704E188455A600D2B823 /* GetTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTimeline.m; sourceTree = "<group>"; };
+		FCD9705018845D7B00D2B823 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		FCD9705218845D8300D2B823 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				056222B718866FBD0094CCBD /* QuartzCore.framework in Frameworks */,
+				FCD9705318845D8300D2B823 /* Social.framework in Frameworks */,
+				FCD9705118845D7B00D2B823 /* Accounts.framework in Frameworks */,
 				FC4A3A2F185FB3200049096F /* libsqlite3.0.dylib in Frameworks */,
 				FC4A39F6185F9B480049096F /* MobileCoreServices.framework in Frameworks */,
 				FC4A39F4185F9B400049096F /* Security.framework in Frameworks */,
@@ -350,6 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				056222B618866FBD0094CCBD /* QuartzCore.framework */,
+				FCD9705218845D8300D2B823 /* Social.framework */,
+				FCD9705018845D7B00D2B823 /* Accounts.framework */,
 				FC4A3A2D185FB2BF0049096F /* libsqlite3.0.dylib */,
 				FC4A3A2B185FB2B60049096F /* XCTest.framework */,
 				FC4A39F5185F9B480049096F /* MobileCoreServices.framework */,
@@ -371,6 +382,8 @@
 				CE2618691828D383003CE272 /* AppDelegate.h */,
 				CE26186A1828D383003CE272 /* AppDelegate.m */,
 				CE2618721828D383003CE272 /* MainStoryboard.storyboard */,
+				FCD9704D188455A600D2B823 /* GetTimeline.h */,
+				FCD9704E188455A600D2B823 /* GetTimeline.m */,
 				CE2618751828D383003CE272 /* ViewController.h */,
 				CE2618761828D383003CE272 /* ViewController.m */,
 				CE7F93851856F1AF005CA13E /* Goal.h */,
@@ -553,6 +566,7 @@
 				FC4A3A13185F9B790049096F /* UIImageView+AFNetworking.m in Sources */,
 				FC4A3A11185F9B790049096F /* AFURLConnectionOperation.m in Sources */,
 				FC4A3A12185F9B790049096F /* AFXMLRequestOperation.m in Sources */,
+				FCD9704F188455A600D2B823 /* GetTimeline.m in Sources */,
 				FC4A3A49185FC5240049096F /* StrageWeight.m in Sources */,
 				FC4A3A0D185F9B790049096F /* AFImageRequestOperation.m in Sources */,
 				FC4A3A10185F9B790049096F /* AFPropertyListRequestOperation.m in Sources */,
@@ -654,7 +668,7 @@
 				INFOPLIST_FILE = "diet/diet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/e085746/Downloads/DietApp-master/diet/DietApp/diet/diet/iOS",
+					"/Users/e115747/Desktop/2014\\:01\\:16/DietApp/diet/diet/iOS",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -677,7 +691,7 @@
 				INFOPLIST_FILE = "diet/diet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/e085746/Downloads/DietApp-master/diet/DietApp/diet/diet/iOS",
+					"/Users/e115747/Desktop/2014\\:01\\:16/DietApp/diet/diet/iOS",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
