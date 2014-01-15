@@ -31,6 +31,8 @@ sqlite3* db;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self createDB];
 
     /*
     weight.delegate = self;
@@ -82,7 +84,7 @@ sqlite3* db;
     NSString *dir   = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
     {
         FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight.db"]];
         
@@ -99,4 +101,25 @@ sqlite3* db;
     }
 
 }
+
+- (void) createDB{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString *dir   = [paths objectAtIndex:0];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    {
+        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight.db"]];
+        
+        [db open]; //DB開く
+        
+        [db executeUpdate:@"CREATE TABLE weight (id INTEGER PRIMARY KEY AUTOINCREMENT,weight TEXT,date TEXT);"];
+        
+        NSLog(@"Error %@ - %d", [db lastErrorMessage], [db lastErrorCode]);
+        [db close];
+    }
+    
+}
+
 @end

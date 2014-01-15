@@ -136,7 +136,7 @@
 
 //Table Viewのセルの数を指定
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"hogeho%d",tweets.count);
+
     return [tweets count];
 }
 
@@ -154,7 +154,7 @@
     UILabel *userLabel = (UILabel *)[contentView viewWithTag:2];
     
     //セルに表示するtweetのJSONを解析し、NSDictionaryに
-   // NSLog([tweets description]);
+
     NSDictionary *tweetMessage = [tweets objectAtIndex:[indexPath row]];
 
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
@@ -190,11 +190,11 @@
     
     //セルにされているtweetのJSONを解析し、NSDictionaryに
     NSDictionary *tweetMessage = [tweets objectAtIndex:[indexPath row]];
-    NSLog(@"begin");
+
     
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
-    NSLog(@"hogehoge");
+
 
     //メッセージを表示
     UIAlertView *alert = [[UIAlertView alloc] init];
