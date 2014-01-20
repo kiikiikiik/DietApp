@@ -164,7 +164,15 @@
     //セルにTweetの内容とユーザー名を表示
     tweetLabel.text = [tweetMessage objectForKey:@"text"];
     userLabel.text = [userInfo objectForKey:@"screen_name"];
-    iconimage.image = [userInfo objectForKey:@"profile_image_url"];
+
+    NSString *image = [userInfo objectForKey:@"profile_image_url"];
+    //NSLog(@"%@",image);
+    NSString* path = image;
+    NSURL* url = [NSURL URLWithString:path];
+    NSData* data = [NSData dataWithContentsOfURL:url];
+    UIImage* img = [[UIImage alloc] initWithData:data];
+    iconimage.image = img;
+    
     
     return cell;
 }
