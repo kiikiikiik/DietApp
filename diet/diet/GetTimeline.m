@@ -152,7 +152,7 @@
     UIView *contentView = [cell viewWithTag:100];
     UILabel *tweetLabel = (UILabel *)[contentView viewWithTag:1];
     UILabel *userLabel = (UILabel *)[contentView viewWithTag:2];
-    //UIImageView *iconimage = (UIImageView *)[contentView viewWithTag:3];
+    UIImageView *iconimage = (UIImageView *)[contentView viewWithTag:3];
     
     //セルに表示するtweetのJSONを解析し、NSDictionaryに
 
@@ -164,7 +164,7 @@
     //セルにTweetの内容とユーザー名を表示
     tweetLabel.text = [tweetMessage objectForKey:@"text"];
     userLabel.text = [userInfo objectForKey:@"screen_name"];
-    //iconimage.image = [userInfo objectForKey:@"profile_image_url"];
+    iconimage.image = [userInfo objectForKey:@"profile_image_url"];
     
     return cell;
 }
