@@ -97,7 +97,7 @@ NSMutableArray *calocalo = nil;
     //X軸は0〜10の値で設定
     defaultPlotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(20)];
     //Y軸は0〜10の値で設定
-    defaultPlotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(4000)];
+    defaultPlotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(2000)];
     
     // 折れ線グラフ用のプロットスペース
 	CPTXYPlotSpace *scatterPlotSpace = [[CPTXYPlotSpace alloc] init];
@@ -223,7 +223,7 @@ NSMutableArray *calocalo = nil;
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dbPathStr = [path objectAtIndex:0];
     FMDatabase *db = [FMDatabase databaseWithPath:[dbPathStr stringByAppendingPathComponent:@"diet.db"]];
-    NSString *sql = @"SELECT id, calplus FROM calorieplus;";
+    NSString *sql = @"SELECT id, weiweight FROM weight;";
     [db open];
     FMResultSet *results = [db executeQuery:sql];
     idid = [NSMutableArray array];
@@ -233,7 +233,7 @@ NSMutableArray *calocalo = nil;
         
         [idid addObject:[NSNumber numberWithInteger:[results intForColumn:@"id"]]];
         //NSLog(@"point:%@", [idid objectAtIndex:roopnumber]);
-        [weiwei addObject:[results stringForColumn:@"calplus"]];
+        [weiwei addObject:[results stringForColumn:@"weiweight"]];
         //NSLog(@"point:%@", [weiwei objectAtIndex:roopnumber]);
         ++roopnumber;
     }

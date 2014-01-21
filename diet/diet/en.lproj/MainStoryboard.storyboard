@@ -137,7 +137,6 @@
                                     <segue destination="2" kind="modal" modalTransitionStyle="crossDissolve" id="oUS-wC-Zow"/>
                                 </connections>
                             </button>
-
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KUJ-N8-PhZ">
                                 <rect key="frame" x="192" y="305" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -156,8 +155,8 @@
                                 </state>
                                 <connections>
                                     <segue destination="vPb-hO-ely" kind="modal" id="1Yn-Np-DyR"/>
-                                    </connections>
-                                </button>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s09-sh-GZ3">
                                 <rect key="frame" x="53" y="216" width="70" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,7 +165,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="0Ea-OL-OO1" kind="modal" id="Vxb-Pq-euV"/>
-
                                 </connections>
                             </button>
                         </subviews>
@@ -177,6 +175,7 @@
             </objects>
             <point key="canvasLocation" x="31" y="23"/>
         </scene>
+        <!--Graphdraw-->
         <scene sceneID="PJE-hI-caQ">
             <objects>
                 <viewController id="7sA-n3-rqp" customClass="Graphdraw" sceneMemberID="viewController">
@@ -616,10 +615,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="weightNum" destination="gAu-5A-rr9" id="P7p-j3-W34"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLr-J9-yvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="-661"/>
+            <point key="canvasLocation" x="-64" y="-753"/>
         </scene>
         <!--Get Timeline-->
         <scene sceneID="oa9-1H-mkE">
@@ -700,12 +702,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zah-71-Ibl"/>
-
-        <segue reference="Jx9-ID-uIC"/>
-
         <segue reference="NJX-zE-lNh"/>
-
-        <segue reference="vko-ij-MKv"/>
+        <segue reference="zah-71-Ibl"/>
+        <segue reference="Krc-nh-oZK"/>
     </inferredMetricsTieBreakers>
 </document>

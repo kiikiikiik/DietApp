@@ -50,12 +50,14 @@ sqlite3* db;
         NSString *createCalorieDataTable = @"CREATE TABLE calorie_data (id INTEGER PRIMARY KEY AUTOINCREMENT,calorie_title TEXT,calorie_cal INTEGER,calorie_num INTEGER,date TEXT);";
         NSString *createExerciseDataTable = @"CREATE TABLE exercise_data (id INTEGER PRIMARY KEY AUTOINCREMENT,exercise_title TEXT,exercise_cal INTEGER,exercise_num INTEGER,date TEXT);";
         NSString *createCalorieplusDataTable = @"CREATE TABLE calorieplus (id INTEGER PRIMARY KEY AUTOINCREMENT,calplus INTEGER,date TEXT);";
+        NSString *createWeightDataTable = @"CREATE TABLE weight (id INTEGER PRIMARY KEY AUTOINCREMENT,weiweight INTEGER,date TEXT);";
 
         
         [db open]; //DB開く
         [db executeUpdate:createCalorieDataTable]; //SQL実行
         [db executeUpdate:createExerciseDataTable]; //SQL実行
         [db executeUpdate:createCalorieplusDataTable];
+        [db executeUpdate:createWeightDataTable];
         [db close];
     }
     

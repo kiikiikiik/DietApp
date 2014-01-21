@@ -32,7 +32,7 @@ sqlite3* db;
 {
     [super viewDidLoad];
     
-    [self createDB];
+   [self createDB];
 
     /*
     weight.delegate = self;
@@ -84,9 +84,15 @@ sqlite3* db;
     NSString *dir   = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    NSLog(@"%@",weight_num);
+    //NSLog(@"%@",paths);
+    NSLog(@"aii");
+    
+    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"diet.db"]])
     {
-        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight.db"]];
+        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
+        
+        NSLog(@"aaaaa");
         
         [db open]; //DB開く
         
@@ -94,7 +100,7 @@ sqlite3* db;
         df.dateFormat  = @"yyyy-MM-dd HH:mm:ss";
         NSString *strDate = [df stringFromDate:[NSDate date]];
         
-        [db executeUpdate:@"insert into weight (weight,date) values (?,?);",weight_num,strDate];
+        [db executeUpdate:@"insert into weight (weiweight,date) values (?,?);",weight_num,strDate];
         
         NSLog(@"Error %@ - %d", [db lastErrorMessage], [db lastErrorCode]);
         [db close];
@@ -102,13 +108,15 @@ sqlite3* db;
 
 }
 
+
+
 - (void) createDB{
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     NSString *dir   = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"diet.db"]])
     {
         FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight.db"]];
         
@@ -121,5 +129,6 @@ sqlite3* db;
     }
     
 }
+
 
 @end
