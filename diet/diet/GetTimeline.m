@@ -42,8 +42,10 @@
     
 
     //Twitter APIのURLを準備
-    //今回は「statuses/home_timeline.json」を利用
-    NSString *apiURL = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
+    //今回は「statuses/home_timeline.json」を利用 ←serchにしてます
+    NSString *URL = @"https://api.twitter.com/1.1/search/tweets.json";
+    NSString *encodedString = [URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:encodedString];
     
     //iOS内に保存されているTwitterのアカウント情報を取得
     ACAccountStore *store = [[ACAccountStore alloc] init];
@@ -68,15 +70,12 @@
                                             //0番目のアカウントを使用
                                             ACAccount *account = [twitterAccounts objectAtIndex:0];
                                             //認証が必要な要求に関する設定
-                                            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-                                            [params setObject:@"1" forKey:@"include_entities"];
+                                            NSDictionary *params = @{@"q": @"#だいえっとついったーくらいあんと"};
+                                            //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+                                            //[params setObject:@"1" forKey:@"include_entities"];
                                             //リクエストを生成
-                                            NSURL *url = [NSURL URLWithString:apiURL];
-                                            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                                                  
-                                                                                    requestMethod:SLRequestMethodGET
-                                                                  
-                                                                                              URL:url parameters:params];
+                                            //NSURL *url = [NSURL URLWithString:apiURL];
+                                            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:url parameters:params];
                                             
                                             //リクエストに認証情報を付加
                                             [request setAccount:account];
@@ -97,8 +96,11 @@
                                                 } else {
                                                     //JSONの配列を解析し、TweetをNSArrayの配列に入れる
                                                     NSError *jsonError;
-                                                    tweets = [NSJSONSerialization JSONObjectWithData:responseData
-                                                                                             options: NSJSONReadingMutableLeaves error:&jsonError];
+                                                    //NSLog(@"%@",responseData);//レスポンスはあるっぽい
+                                                    NSDictionary *jsontweets = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                                             options: NSJSONReadingMutableLeaves error:&jsonError] ;
+                                                    tweets = [jsontweets objectForKey:@"statuses"];
+                                                    NSLog(@"%@",tweets);
                                                     
                                                     //Tweet取得完了に伴い、Table Viewを更新
                                                     [self refreshTableOnFront];
@@ -140,7 +142,7 @@
     return [tweets count];
 }
 
-// 呼ばれてない疑惑
+// 呼ばれてない疑惑←呼ばれてるよ
 //各セルにタイトルをセット
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -155,22 +157,25 @@
     UIImageView *iconimage = (UIImageView *)[contentView viewWithTag:3];
     
     //セルに表示するtweetのJSONを解析し、NSDictionaryに
+    NSLog(@"ほげげ");
 
-    NSDictionary *tweetMessage = [tweets objectAtIndex:[indexPath row]];
+    NSDictionary *tweetMessage = [tweets objectAtIndex:indexPath.row];
 
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
     
     //セルにTweetの内容とユーザー名を表示
     tweetLabel.text = [tweetMessage objectForKey:@"text"];
+    NSString *hogehoge = [tweetMessage objectForKey:@"text"];
+    NSLog(@"ほげげげげ");
+    NSLog(@"%@",hogehoge);
     userLabel.text = [userInfo objectForKey:@"screen_name"];
 
+    //アイコンを表示
     NSString *image = [userInfo objectForKey:@"profile_image_url"];
-    //NSLog(@"%@",image);
-    NSString* path = image;
-    NSURL* url = [NSURL URLWithString:path];
-    NSData* data = [NSData dataWithContentsOfURL:url];
-    UIImage* img = [[UIImage alloc] initWithData:data];
+    NSURL *url = [NSURL URLWithString:image];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
     iconimage.image = img;
     
     
@@ -223,8 +228,8 @@
     //SLComposeViewControllerのインスタンス生成
     
     SLComposeViewController *tweetViewController =
-    
     [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetViewController setInitialText:@"前日比+〇〇kgです"];
     
     
     //Tweet投稿完了時・キャンセル時に呼ばれる処理
