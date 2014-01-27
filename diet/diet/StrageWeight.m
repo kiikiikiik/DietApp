@@ -34,40 +34,57 @@ sqlite3* db;
 
 - (IBAction)weightSave:(id)sender {
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:self.weightNum.text forKey:@"my_weight"];
     
-    
-    float weight_f = [userDefaults floatForKey:@"my_weight"];
-    NSNumber *weight_num = [NSNumber numberWithFloat:weight_f];
-
-    
-    /*
     float weight_f = [self.weightNum.text floatValue];
     NSNumber *weight_num = [NSNumber numberWithFloat:weight_f];
-    */
+    
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
 
     NSLog(@"%@",paths);
     NSString *dir = [paths objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
-    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"weight.db"]])
+    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"diet.db"]])
     {
-        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"weight.db"]];
+        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
         
         [db open]; //DB開く
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.dateFormat  = @"yyyy-MM-dd";
         NSString *strDate = [df stringFromDate:[NSDate date]];
+        NSNumber *past_weight;
+        NSNumber *diff_weight;
+
+        int c_weight;
+        int p_weight;
+        int d_weight=0;
+
+
+        FMResultSet *results = [db executeQuery:@"select * from calorieplus order by id desc limit 1;"];
+
+        while ([results next]) {
+            NSDictionary *dic = [results resultDictionary];
+
+            past_weight = [dic objectForKey:@"calplus"];
+            p_weight = [past_weight intValue];
+            c_weight = [weight_num intValue];
+            d_weight = c_weight - p_weight;
+            
+            NSLog(@"%d",d_weight);
+            
+        }
         
-        [db executeUpdate:@"insert into weight (weight,date) values (?,?);",weight_num,strDate];
+        diff_weight = [NSNumber numberWithInteger:d_weight];
+
+        
+        [db executeUpdate:@"insert into calorieplus (calplus,date,diff_weight) values (?,?,?);",weight_num,strDate,diff_weight];
+
         
         NSLog(@"Error %@ - %d", [db lastErrorMessage], [db lastErrorCode]);
         [db close];
     }
-    
     
 }
 @end
