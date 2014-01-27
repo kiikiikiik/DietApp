@@ -668,7 +668,7 @@
 				INFOPLIST_FILE = "diet/diet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/e115702/DietApp/diet/diet/iOS,
+					/Users/e115747/Desktop/snzt/DietApp/diet/diet/iOS,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -691,7 +691,7 @@
 				INFOPLIST_FILE = "diet/diet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/e115702/DietApp/diet/diet/iOS,
+					/Users/e115747/Desktop/snzt/DietApp/diet/diet/iOS,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

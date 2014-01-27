@@ -15,6 +15,8 @@
 
 @implementation SnsViewController
 
+@synthesize txtInputName;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,8 +31,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initialize];
+    txtInputName.delegate = self;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)targetTextField {
+    
+    // textFieldを最初にイベントを受け取る対象から外すことで、
+    // キーボードを閉じる。
+    [targetTextField resignFirstResponder];
+    
+    return YES;
+}
 
 #pragma mark - 自作関数
 
@@ -43,7 +54,7 @@
     self.tableViewTextList.delegate = self.tableViewTextList;
     
     //UITextFieldの初期設定
-//    self.txtInputName.delegate = self;
+    //    self.txtInputName.delegate = self;
     [self.txtInputName becomeFirstResponder];
     self.txtInputName.placeholder = @"登録したい名前を入力してね";
     
@@ -66,8 +77,8 @@
         sharedCliant = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:TOPURL]];
     });
     
-    NSString *path = [NSString stringWithFormat:@"tops.json"];//パスの指定
-    NSDictionary *params = @{@"top[name]":self.txtInputName.text};//テキストデータのセット
+    NSString *path = [NSString stringWithFormat:@"ranking.json"];//パスの指定
+    NSDictionary *params = @{@"weights[twitter_name]":self.txtInputName.text};//テキストデータのセット
     
     
     [sharedCliant setParameterEncoding:AFFormURLParameterEncoding];
@@ -102,7 +113,7 @@
         sharedCliant = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:TOPURL]];
     });
     
-    NSString *path = [NSString stringWithFormat:@"tops.json"];
+    NSString *path = [NSString stringWithFormat:@"ranking.json"];
     [sharedCliant setParameterEncoding:AFJSONParameterEncoding];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[sharedCliant requestWithMethod:@"GET" path:path parameters:nil]
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON){
@@ -114,7 +125,7 @@
                                                                                             NSMutableArray *names = [NSMutableArray array];
                                                                                             for (NSDictionary *jsonObject in JSON) {
                                                                                                 
-                                                                                                [names addObject:[jsonObject objectForKey:@"name"]];
+                                                                                                [names addObject:[jsonObject objectForKey:@"twitter_name"]];
                                                                                                 
                                                                                             }
                                                                                             
