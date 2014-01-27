@@ -70,7 +70,7 @@
                                             //0番目のアカウントを使用
                                             ACAccount *account = [twitterAccounts objectAtIndex:0];
                                             //認証が必要な要求に関する設定
-                                            NSDictionary *params = @{@"q": @"#だいえっとついったーくらいあんと"};
+                                            NSDictionary *params = @{@"q": @"#10年ぶりに幼なじみと再会することになった俺はしぶしぶダイエットアプリを入れることにした"};
                                             //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
                                             //[params setObject:@"1" forKey:@"include_entities"];
                                             //リクエストを生成
@@ -157,7 +157,6 @@
     UIImageView *iconimage = (UIImageView *)[contentView viewWithTag:3];
     
     //セルに表示するtweetのJSONを解析し、NSDictionaryに
-    NSLog(@"ほげげ");
 
     NSDictionary *tweetMessage = [tweets objectAtIndex:indexPath.row];
 
@@ -167,7 +166,6 @@
     //セルにTweetの内容とユーザー名を表示
     tweetLabel.text = [tweetMessage objectForKey:@"text"];
     NSString *hogehoge = [tweetMessage objectForKey:@"text"];
-    NSLog(@"ほげげげげ");
     NSLog(@"%@",hogehoge);
     userLabel.text = [userInfo objectForKey:@"screen_name"];
 
