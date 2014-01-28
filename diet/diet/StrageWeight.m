@@ -72,13 +72,9 @@ sqlite3* db;
             c_weight = [weight_num intValue];
             d_weight = c_weight - p_weight;
             
-            NSLog(@"%d",d_weight);
-            
         }
         
         diff_weight = [NSNumber numberWithInteger:d_weight];
-
-        
         [db executeUpdate:@"insert into calorieplus (calplus,date,diff_weight) values (?,?,?);",weight_num,strDate,diff_weight];
 
         

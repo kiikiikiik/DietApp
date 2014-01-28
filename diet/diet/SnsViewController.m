@@ -79,6 +79,9 @@
     
     NSString *path = [NSString stringWithFormat:@"ranking.json"];//パスの指定
     NSDictionary *params = @{@"weights[twitter_name]":self.txtInputName.text};//テキストデータのセット
+
+    
+    //    NSString *params = @"hoge";//テキストデータのセット
     
     
     [sharedCliant setParameterEncoding:AFFormURLParameterEncoding];

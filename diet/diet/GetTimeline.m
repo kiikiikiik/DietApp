@@ -7,6 +7,7 @@
 //
 
 #import "GetTimeline.h"
+#import "FMDatabase.h"
 
 
 @interface GetTimeline ()
@@ -17,6 +18,8 @@
     NSArray *tweets;
     IBOutlet UITableView *table;
 }
+
+sqlite3* db;
 
 @synthesize table = _table;
 
@@ -33,9 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self getTimeline];
 }
+
 
 
 - (void)getTimeline {
@@ -220,14 +224,45 @@
 }
 
 - (IBAction)sendEasyTweet:(id)sender {
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+
+    
+    NSString *dir = [paths objectAtIndex:0];
+    
+    FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
+    
+    [db open]; //DB開く
+    
+    FMResultSet *results = [db executeQuery:@"select * from calorieplus order by id desc limit 1;"];
+
+    NSNumber *diff_weight;
+    int d_weight;
+    
+    while ([results next]) {
+        NSDictionary *dic = [results resultDictionary];
+        diff_weight = [dic objectForKey:@"diff_weight"];
+        d_weight = [diff_weight intValue];
+        NSLog(@"%d",d_weight);
+    }
+    
+    diff_weight = [NSNumber numberWithInteger:d_weight];
     
     
+    NSLog(@"%@",diff_weight);
     
+    
+    NSLog(@"Error %@ - %d", [db lastErrorMessage], [db lastErrorCode]);
+    [db close];
+    
+    
+
     //SLComposeViewControllerのインスタンス生成
+
     
     SLComposeViewController *tweetViewController =
     [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetViewController setInitialText:@"前日比+〇〇kgです"];
+    [tweetViewController setInitialText:[NSString stringWithFormat:@"前日比 %d kgです #10年ぶりに幼なじみと再会することになった俺はしぶしぶダイエットアプリを入れることにした",d_weight] ];
     
     
     //Tweet投稿完了時・キャンセル時に呼ばれる処理

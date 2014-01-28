@@ -52,14 +52,18 @@
 		FC4A3A43185FB4D30049096F /* StrageCalorie.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A42185FB4D30049096F /* StrageCalorie.m */; };
 		FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A45185FB4E10049096F /* StrageExercise.m */; };
 		FC4A3A49185FC5240049096F /* StrageWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A3A48185FC5240049096F /* StrageWeight.m */; };
+		FC73DF461896FA39003C3D90 /* addRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = FC73DF451896FA39003C3D90 /* addRanking.m */; };
+		FC73DF4A18978085003C3D90 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC73DF4718978085003C3D90 /* Icon@2x.png */; };
+		FC73DF4B18978085003C3D90 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FC73DF4818978085003C3D90 /* Icon-72.png */; };
+		FC73DF4C18978085003C3D90 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC73DF4918978085003C3D90 /* Icon.png */; };
 		FCD9704F188455A600D2B823 /* GetTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD9704E188455A600D2B823 /* GetTimeline.m */; };
 		FCD9705118845D7B00D2B823 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705018845D7B00D2B823 /* Accounts.framework */; };
 		FCD9705318845D8300D2B823 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9705218845D8300D2B823 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		056222B318866F360094CCBD /* Graphdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphdraw.h; sourceTree = "<group>"; };
-		056222B418866F360094CCBD /* Graphdraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphdraw.m; sourceTree = "<group>"; };
+		056222B318866F360094CCBD /* Graphdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graphdraw.h; path = ../Graphdraw.h; sourceTree = "<group>"; };
+		056222B418866F360094CCBD /* Graphdraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Graphdraw.m; path = ../Graphdraw.m; sourceTree = "<group>"; };
 		056222B618866FBD0094CCBD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		056222BA1886700E0094CCBD /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		056222BB1886700E0094CCBD /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimation.h; sourceTree = "<group>"; };
@@ -216,6 +220,11 @@
 		FC4A3A45185FB4E10049096F /* StrageExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageExercise.m; sourceTree = "<group>"; };
 		FC4A3A47185FC5240049096F /* StrageWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrageWeight.h; sourceTree = "<group>"; };
 		FC4A3A48185FC5240049096F /* StrageWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrageWeight.m; sourceTree = "<group>"; };
+		FC73DF441896FA39003C3D90 /* addRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = addRanking.h; path = ../addRanking.h; sourceTree = "<group>"; };
+		FC73DF451896FA39003C3D90 /* addRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = addRanking.m; path = ../addRanking.m; sourceTree = "<group>"; };
+		FC73DF4718978085003C3D90 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		FC73DF4818978085003C3D90 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		FC73DF4918978085003C3D90 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FCD9704D188455A600D2B823 /* GetTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetTimeline.h; sourceTree = "<group>"; };
 		FCD9704E188455A600D2B823 /* GetTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTimeline.m; sourceTree = "<group>"; };
 		FCD9705018845D7B00D2B823 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -379,9 +388,14 @@
 				056222B81886700E0094CCBD /* iOS */,
 				FC4A3A31185FB39E0049096F /* FMDB */,
 				FC4A39F7185F9B500049096F /* AFNetworking */,
+				CE2618611828D383003CE272 /* Supporting Files */,
 				CE2618691828D383003CE272 /* AppDelegate.h */,
 				CE26186A1828D383003CE272 /* AppDelegate.m */,
+				FC73DF441896FA39003C3D90 /* addRanking.h */,
+				FC73DF451896FA39003C3D90 /* addRanking.m */,
 				CE2618721828D383003CE272 /* MainStoryboard.storyboard */,
+				056222B318866F360094CCBD /* Graphdraw.h */,
+				056222B418866F360094CCBD /* Graphdraw.m */,
 				FCD9704D188455A600D2B823 /* GetTimeline.h */,
 				FCD9704E188455A600D2B823 /* GetTimeline.m */,
 				CE2618751828D383003CE272 /* ViewController.h */,
@@ -400,7 +414,6 @@
 				CE0465331856F71700B54FCF /* IntakeEnter.m */,
 				CE0465351856F73E00B54FCF /* ConsumptionEnter.h */,
 				CE0465361856F73E00B54FCF /* ConsumptionEnter.m */,
-				CE2618611828D383003CE272 /* Supporting Files */,
 				FC4A3A17185F9CB10049096F /* SnsViewController.h */,
 				FC4A3A18185F9CB10049096F /* SnsViewController.m */,
 				FC4A3A41185FB4D30049096F /* StrageCalorie.h */,
@@ -418,6 +431,9 @@
 		CE2618611828D383003CE272 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC73DF4718978085003C3D90 /* Icon@2x.png */,
+				FC73DF4818978085003C3D90 /* Icon-72.png */,
+				FC73DF4918978085003C3D90 /* Icon.png */,
 				CE2618621828D383003CE272 /* diet-Info.plist */,
 				CE2618631828D383003CE272 /* InfoPlist.strings */,
 				CE2618661828D383003CE272 /* main.m */,
@@ -434,8 +450,6 @@
 			children = (
 				FC4A3A14185F9BB20049096F /* GITableView.h */,
 				FC4A3A15185F9BB20049096F /* GITableView.m */,
-				056222B318866F360094CCBD /* Graphdraw.h */,
-				056222B418866F360094CCBD /* Graphdraw.m */,
 				FC4A39F8185F9B790049096F /* AFHTTPClient.h */,
 				FC4A39F9185F9B790049096F /* AFHTTPClient.m */,
 				FC4A39FA185F9B790049096F /* AFHTTPRequestOperation.h */,
@@ -529,9 +543,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2618651828D383003CE272 /* InfoPlist.strings in Resources */,
+				FC73DF4A18978085003C3D90 /* Icon@2x.png in Resources */,
 				CE26186D1828D383003CE272 /* Default.png in Resources */,
 				CE26186F1828D383003CE272 /* Default@2x.png in Resources */,
+				FC73DF4C18978085003C3D90 /* Icon.png in Resources */,
 				CE2618711828D383003CE272 /* Default-568h@2x.png in Resources */,
+				FC73DF4B18978085003C3D90 /* Icon-72.png in Resources */,
 				CE2618741828D383003CE272 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +574,7 @@
 				CE2618771828D383003CE272 /* ViewController.m in Sources */,
 				FC4A3A3C185FB3AA0049096F /* FMDatabase.m in Sources */,
 				FC4A3A3F185FB3AA0049096F /* FMDatabaseQueue.m in Sources */,
+				FC73DF461896FA39003C3D90 /* addRanking.m in Sources */,
 				FC4A3A46185FB4E10049096F /* StrageExercise.m in Sources */,
 				0562230C188671B10094CCBD /* CalorieSeek.m in Sources */,
 				FC4A3A3D185FB3AA0049096F /* FMDatabaseAdditions.m in Sources */,
